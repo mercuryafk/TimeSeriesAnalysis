@@ -71,7 +71,7 @@ with st.sidebar:
     st.markdown("Historical stock data is sourced from Yahoo Finance via the `yfinance` library. Data has been taken for 10 years from 2015 to 2025.")
     st.markdown("---")
     # IMPORTANT: Remember to replace this with the actual link to your GitHub repo
-    st.link_button("View Project on GitHub", "https://github.com/your-username/your-repo-name")
+    st.link_button("View Project on GitHub", "https://github.com/mercuryafk/timeseriesanalysis")
 
 # --- Main Dashboard ---
 st.title("Time Series Analysis & Forecasting Dashboard")
@@ -185,4 +185,5 @@ else:
         st.plotly_chart(fig_future, use_container_width=True)
         st.markdown("""
         **Insight:** This chart shows the LSTM's projection into the unknown future. It's generated iteratively and demonstrates the model's extrapolation of the most recent trend. This type of long-range forecast is speculative and highlights the model's limitations.
+
         """)
