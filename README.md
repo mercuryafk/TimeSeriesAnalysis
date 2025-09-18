@@ -92,3 +92,28 @@ This project's core is the comparison of different modeling approaches. Each mod
 
 ### Conclusion
 The **LSTM** model provided the most accurate short-term predictions on unseen test data. However, **Prophet** was invaluable for its ability to decompose the time series and provide human-readable insights. The choice of the "best" model depends on the specific goal: raw accuracy (LSTM) vs. interpretability (Prophet).
+
+---
+
+## File Caricature
+
+This repository has multiple files, let me outline what each of them does and why I have included them here:
+
+1. **aapldataprep.py** - This file includes code that we used to get and then prep the aapl stock data from 2015 to 2025. The code allowed us to extract everything, cleaned up in - 'apple_stock_data.csv'.                                                         
+2. **afdtest.py** - This code is where we tested if the data was stationary or not. Which is crucial for time series models. The test failed, as expected.
+3. **makestationary.py** - This code is where we processed the data to make it stationary, which was crucial for training our models.
+4. **runmodelsoffline.py** - This is where we train all our models, and save the CSVs from. This code is where all the csv files in the repo came from. This code takes 'apple_stock_data.csv' and then trains all the models on it one by one. Starting from ARIMA, to LSTM. Once the data is generated, it is then saved into CSVs. This was a necessary step as SARIMA and LSTM were computationally very expensive and it took sarima over 15 minutes to load locally. Having the results precomputed saves a lot of time and helps load the frontend fast and efficiently.
+   
+
+    - ***arima_forecast.csv*** - Saved all the arima model's data here, the forecast and everything.
+    - ***sarima_forecast.csv*** - Saved sarima's data and forecast here.
+    - ***prophet_forecast.csv*** - Prophet's data and forecast here.
+    - ***lstm_forecast.csv*** - This is where the LSTM model's predication on original data was stored.
+    - ***lstm_future_forecast.csv*** - This is where the prediction of 3 months in the future was forecasted by our previously trained LSTM model.
+5. **dashboard.py** - This is the code for the frontend of our dashboard, a streamlit based interface which uses the precomputed data in the CSVs mentioned above and simply plot them quickly for end users to study. 
+
+That was that! First ever project where I tinkered around with ML and other such fascinating tools.
+
+---
+
+*Put together by Umesh K.*
