@@ -55,7 +55,6 @@ with st.sidebar:
         "This dashboard presents a comparative analysis of four different time series "
         "forecasting models for Apple (AAPL) stock prices. All forecasts are pre-computed "
         "and loaded for instant visualization. "
-        "This project is for my internship with Zidio, Data Science and Analytics."
     )
     st.subheader("Models Implemented:")
     st.markdown(
@@ -187,3 +186,4 @@ else:
         **Insight:** This chart shows the LSTM's projection into the unknown future. It's generated iteratively and demonstrates the model's extrapolation of the most recent trend. This type of long-range forecast is speculative and highlights the model's limitations.
 
         """)
+
